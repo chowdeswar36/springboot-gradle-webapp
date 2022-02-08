@@ -1,0 +1,46 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Add Employee page</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+	<div align="center" class="col-md-12">
+		<h2>Welcome to Employee registration page</h2>
+		<div class="col-md-6">
+			<form action="#" th:action="@{/saveemployee}" th:object="${employee}"
+				method="post">
+				<table>
+					<tr>
+						Employee Id:
+						<input type="text" class="form-control" id="name" placeholder="Enter Employee id" th:field="*{eid}">
+					    <p class="alert alert-danger" th:if="${#fields.hasErrors('eid')}" th:errors="*{eid}">	
+					</tr>
+					<tr>
+						Employee Name:
+						<input type="text" class="form-control" id="name" placeholder="Enter Employee name" th:field="*{ename}">
+                        <p class="alert alert-danger" th:if="${#fields.hasErrors('ename')}" th:errors="*{ename}">		
+					</tr>
+					<tr>
+						Employee Email:
+						<input type="text" class="form-control" id="name" placeholder="Enter Employee email" th:field="*{eemail}">
+	                    <p class="alert alert-danger" th:if="${#fields.hasErrors('eemail')}" th:errors="*{eemail}">
+					</tr>
+					<tr>
+						Employee Mobile:
+						<input type="text" class="form-control" id="name" placeholder="Enter Employee mobile" th:field="*{emobile}">
+					   <p class="alert alert-danger" th:if="${#fields.hasErrors('emobile')}" th:errors="*{emobile}">
+					</tr>
+					<tr>
+						<button type="submit" class="btn btn-primary" style="margin-top: 20px;">Submit</button>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>View Employees</title>
+<style type="text/css">
+.addmobile {
+	background-color: navy;
+	text-align: center;
+	width: 12%;
+	padding: 10px;
+	margin-bottom: 15px;
+}
+</style>
+</head>
+<body>
+	<div align="center">
+		<h1>Employees List</h1>
+		<div class="addmobile">
+			<a href="/addemployee" style="color: white">Add New Employee</a>
+		</div>
+		<table border="2" width="100%" cellpadding="2">
+			<thead>
+				<tr>
+					<th>Employee Id</th>
+					<th>Employee Name</th>
+					<th>Employee Email</th>
+					<th>Employee Mobile</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="employee :${listofemployees}">
+					<td th:text="${employee.eid}"></td>
+					<td th:text="${employee.ename}"></td>
+					<td th:text="${employee.eemail}"></td>
+					<td th:text="${employee.emobile}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
